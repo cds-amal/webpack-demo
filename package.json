@@ -1,0 +1,15 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "webpack": "webpack",
+    "fake": "mkdir -p node_modules/faked && echo 'module.exports = \"I am from nodulus prime (not bungled)\";' > node_modules/faked/index.js",
+    "test": "yarn fake && yarn webpack && node dist/main.js"
+  },
+  "devDependencies": {
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

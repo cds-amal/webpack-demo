@@ -6,7 +6,9 @@
   "scripts": {
     "webpack": "webpack",
     "fake": "mkdir -p node_modules/faked && echo 'module.exports = \"I am from nodulus prime (not bungled)\";' > node_modules/faked/index.js",
-    "test": "yarn fake && yarn webpack && node dist/main.js"
+    "run:bundled": "out=$(node dist/main) && echo \"\nRunning bundle\n${out}\" ",
+    "run:cli": "out=$(node src/index) && echo \"\nRunning cli\n${out}\" ",
+    "test": "yarn webpack && yarn fake && yarn run:bundled && yarn run:cli"
   },
   "devDependencies": {
     "webpack": "^5.44.0",
